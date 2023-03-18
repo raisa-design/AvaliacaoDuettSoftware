@@ -3,20 +3,26 @@
     public class Fruta
     {
         public int Id { get; set; }
-
+        public string Descricao { get; set; }
         public int ValorA { get; set; }
         public int ValorB { get; set; }
+        
 
-        public double Resultado { get; set; }
-
-        public void Dividir()
+        public Fruta(string descricao, int valorA, int valorB)
         {
-            Resultado = ValorA / ValorB;
+            Descricao = descricao;
+            ValorA = valorA;
+            ValorB = valorB;
         }
 
-        public void Multiplicar()
+        public double Dividir()
         {
-            Resultado = ValorA * ValorB;
+            return ValorA / ValorB;
+        }
+
+        public double Multiplicar()
+        {
+            return ValorA * ValorB;
         }
     }
 }
