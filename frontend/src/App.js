@@ -1,11 +1,14 @@
 
+
 import './App.css';
+import FrutaLista from './components/Frutas/FrutaLista';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Hello World
+        <FrutaLista/>
        
       </header>
     </div>

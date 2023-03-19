@@ -20,6 +20,9 @@ namespace AvaliacaoDuettSoftware.Api
             services.AddDbContext<DataContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("SqliteDatabase"))
             );
+
+            services.AddCors();
+
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
@@ -37,6 +40,10 @@ namespace AvaliacaoDuettSoftware.Api
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            app.UseCors(x => x.AllowAnyHeader()
+                             .AllowAnyMethod()
+                             .AllowAnyOrigin());
 
             app.MapControllers();
         }
