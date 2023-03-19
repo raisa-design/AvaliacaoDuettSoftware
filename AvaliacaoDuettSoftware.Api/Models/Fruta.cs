@@ -17,12 +17,12 @@
 
         public double Dividir()
         {
-            return ValorA / ValorB;
+            return Convert.ToDouble(ValorA)  / Convert.ToDouble( ValorB);
         }
 
         public double Multiplicar()
         {
-            return ValorA * ValorB;
+            return Convert.ToDouble(ValorA)  * Convert.ToDouble( ValorB);
         }
     }
 }

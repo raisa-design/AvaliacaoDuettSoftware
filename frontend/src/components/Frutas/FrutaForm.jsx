@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import { Modal, Button, Form } from 'react-bootstrap';
 
 const FrutaForm = ({ fruta = { valorA: 0, valorB: 0 }, show, onHide }) => {
@@ -12,15 +13,34 @@ const FrutaForm = ({ fruta = { valorA: 0, valorB: 0 }, show, onHide }) => {
       valorA = fruta.valorA;
       valorB = fruta.valorB;
     }
-    const operacao = event.target.value;
-    if (operacao === 'divisao' && valorB !== 0) {
-      setResultado(valorA / valorB);
+
+    const operacao  = event.target.value;
+    if (operacao === 'divisao' && valorB !== 0) { 
+      const fetchFrutas = async () => {
+        const response = await axios.get(`http://localhost:5296/api/Fruta/dividir/${fruta.id}`);
+        setResultado(response.data);
+       
+      }; fetchFrutas();
+      
     } else if (operacao === 'multiplicacao') {
-      setResultado(valorA * valorB);
+      const fetchFrutas = async () => {
+        const response = await axios.get(`http://localhost:5296/api/Fruta/multiplicar/${fruta.id}`);
+        setResultado(response.data);
+       
+      }; fetchFrutas();
     } else {
       setResultado(0);
     }
   };
+  //   const operacao = event.target.value;
+  //   if (operacao === 'divisao' && valorB !== 0) {
+  //     setResultado(valorA / valorB);
+  //   } else if (operacao === 'multiplicacao') {
+  //     setResultado(valorA * valorB);
+  //   } else {
+  //     setResultado(0);
+  //   }
+  // };
 
   console.log(fruta)
 
