@@ -14,9 +14,7 @@ namespace AvaliacaoDuettSoftware.Api
 
         public void ConfigurationService(IServiceCollection services)
         {
-            //services.AddDbContext<DataContext>(
-            //    context => context.UseSqlite(Configuration.GetConnectionString("WebApiDatabase"))
-            //);
+
             services.AddDbContext<DataContext>(
                 context => context.UseSqlite(Configuration.GetConnectionString("SqliteDatabase"))
             );

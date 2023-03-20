@@ -1,6 +1,3 @@
-
-
-import './App.css';
 import FrutaLista from './components/Frutas/FrutaLista';
 
 

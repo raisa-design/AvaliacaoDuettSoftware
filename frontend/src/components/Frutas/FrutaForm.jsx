@@ -36,8 +36,13 @@ const FrutaForm = ({ fruta = { valorA: 0, valorB: 0 }, show, onHide }) => {
 
   console.log(fruta)
 
+  function customHide(){
+    setResultado(0);
+    onHide();
+  }
+
   return (
-    <Modal show={show} onHide={onHide}>
+    <Modal show={show} onHide={customHide}>
       <Modal.Header closeButton>
         <Modal.Title>Teste modal</Modal.Title>
       </Modal.Header>
