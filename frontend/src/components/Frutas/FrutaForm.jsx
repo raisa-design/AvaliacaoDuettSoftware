@@ -32,15 +32,7 @@ const FrutaForm = ({ fruta = { valorA: 0, valorB: 0 }, show, onHide }) => {
       setResultado(0);
     }
   };
-  //   const operacao = event.target.value;
-  //   if (operacao === 'divisao' && valorB !== 0) {
-  //     setResultado(valorA / valorB);
-  //   } else if (operacao === 'multiplicacao') {
-  //     setResultado(valorA * valorB);
-  //   } else {
-  //     setResultado(0);
-  //   }
-  // };
+
 
   console.log(fruta)
 
@@ -63,10 +55,10 @@ const FrutaForm = ({ fruta = { valorA: 0, valorB: 0 }, show, onHide }) => {
             <Form.Label>Resultado</Form.Label>
             <Form.Control type="number" value={resultado} readOnly />
           </Form.Group>
-          <Button value="multiplicacao" onClick={handleCalcular} className="mr-2">
+          <Button value="multiplicacao" onClick={handleCalcular} className="me-2">
             Multiplicar
           </Button>
-          <Button value="divisao" onClick={handleCalcular} disabled={!fruta || fruta.valorB === 0}>
+          <Button value="divisao"  onClick={handleCalcular} disabled={!fruta || fruta.valorB === 0}>
             Dividir
           </Button>
         </Form>
